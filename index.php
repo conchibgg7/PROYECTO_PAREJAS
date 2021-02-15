@@ -6,17 +6,24 @@
     </head>
     <body>
         <?php
-        $animales = array(
-            "perro" => "Lucas",
-            "gato" => "Misi"
-        );
+        
+        function mostrarMascotas($nombre, $animal) {
 
-        function cambiarNombre(&$nombre, $animal) {
-            // Añade Nombre : en cada valor del array
-            $nombre = "Nombre: " . $nombre;
+            echo strtoupper($animal) . " -> $nombre" . "<br>";
+
         }
 
-        array_walk($animales, 'cambiarNombre');
+ 
+
+// Muestra el listado del array:
+
+        array_walk($animales, 'mostrarMascotas');
+
+// Modifica cada value para añadir Nombre: al principi
+
+// Ahora el listado mostrado incluye Nombre:
+
+        array_walk($animales, 'mostrarMascotas');
         
         var_dump($animales);
 
